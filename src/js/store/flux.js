@@ -1,29 +1,33 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
-
-// Store
+    
+    // Store - se declara estado de objetos people y planets vacios 
     store: {
-	  people: [],
-	  peopleDetail: []
+	  people: {},
+	  planets: {},
     },
-
-//Actions
+    
+    //Actions - funciones fetch para personas y planetas en donde actualizamos el estado de people y planets
     actions: {
-      
-      getPeople : () => {
 
-        fetch("https://www.swapi.tech/api/people/1")
-          .then((res) => res.json())
-          .then((data) => {setStore({people:data})})
-          .catch((err) => console.error(err));
+      getPeople : () => {
+        fetch('https://www.swapi.tech/api/people/')
+        .then((res) => res.json())
+        // actualizamos estado de store.people en donde obtenemos que data (proveniente de la api) se cargará en el objeto people
+        .then((data) => {setStore({people:data})})
+        .catch((err) => console.error(err));
+			
       },
 
-      getPeopleDetail: () => {
+      getPlanets: () => {
 
-        fetch(`https://www.swapi.tech/api/people/${id}`)
+        fetch('https://www.swapi.tech/api/planets/')
           .then((res) => res.json())
-          .then((data) => {setStore({peopleDetail:data})})
+        // actualizamos estado de store.planets en donde obtenemos que data (proveniente de la api) se cargará en el objeto planets
+          .then((data) => {setStore({planets:data})})
           .catch((err) => console.error(err));
+          
+
       }
     }
   }

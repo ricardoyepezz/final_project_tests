@@ -13,9 +13,9 @@ const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
 	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
 	const basename = process.env.BASENAME || "";
-	const [people, setPeople] = useState([]);
-	const [planets, setPlanets] = useState([]);
+	/*const [people, setPeople] = useState({});
 	const [loading, setLoading] = useState(true);
+	const [planets, setPlanets] = useState([]);
 
 	useEffect(() =>{
 		async function fetchPeople () {
@@ -28,7 +28,7 @@ const Layout = () => {
 		async function fetchPlanets () {
 			let res = await fetch ("https://www.swapi.tech/api/planets/");
 			let data = await res.json();
-			setPlanets(data.result)
+			setPlanets(data.results)
 			setLoading(false)
 			}
 
@@ -36,29 +36,29 @@ const Layout = () => {
 		fetchPlanets();
 		
 	},[])
-console.log("peoplelayout", people);
+console.log("peoplelayout", people); */
 	return (
 		<div>
 			<BrowserRouter basename={basename}>
 				
 					<Navbar />
-					{loading? (<Loader>Loading...</Loader>) : 
-					(<Switch>
+					{/* {loading? (<Loader>Loading...</Loader>) : 
+					( */}<Switch>
 					<Route exact path="/">
 						<Home />
 					</Route>
 					<Route exact path="/people">
-						<People data={people}/>
+						<People/>
 					</Route>
 					<Route exact path="/planets">
-						<Planets data={planets}/>
+						<Planets/>
 					</Route>
 					<Route>
 						<h1>Not found!</h1>
 					</Route>
 				</Switch>
 					
-				) }
+				{/* ) } */}
 				<Footer />
 			</BrowserRouter>
 		</div>
