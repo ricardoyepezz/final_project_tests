@@ -4,7 +4,7 @@ import starWarsIcon from "../../img/star-wars-icon.png";
 
 export const Navbar = () => {
 	return (
-<nav className="navbar-expand-lg navbar navbar-dark bg-dark">
+<nav className="navbar-expand-lg navbar navbar-dark bg-dark border border-3 border-warning">
   <div className="container-fluid">
   <Link to="/">
   <span className="navbar-brand">
@@ -13,17 +13,17 @@ export const Navbar = () => {
 	</Link>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-	  <Link to="/">
+	  <Link style={{textDecoration : "none"}}  to="/">
         <li className="nav-item">
-        <span className="nav-link active">Home</span>
+        <span className="nav-link">Home</span>
         </li>
 		</Link>
-		<Link to="/people">
+		<Link style={{textDecoration : "none"}} to="/people">
         <li className="nav-item">
           <span className="nav-link">People</span>
         </li>
 		</Link>
-		<Link to="/planets">
+		<Link style={{textDecoration : "none"}} to="/planets">
 
 		<li className="nav-item">
           <span className="nav-link">Planets</span>
@@ -32,7 +32,7 @@ export const Navbar = () => {
       </ul>
       <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-outline-light" type="submit">Search</button>
+        <button className="btn btn-outline-warning" type="submit">Search</button>
       </form>
     </div>
   </div>
