@@ -22,9 +22,23 @@ export const Planets = () => {
                     <div className="card-body">
                       <h5 className="card-title">{element.name}</h5>
                       <p className="card-text">{element.url}</p>
-                      <button className="btn btn-warning"><Link style={{textDecoration : "none", color: "black"}} variant="outline-primary" to = {'planets/' + element.uid}>                    
-                                Detail
-                            </Link></button>
+                      <button className="btn btn-warning">
+                        <Link
+                          style={{ textDecoration: "none", color: "black" }}
+                          variant="outline-primary"
+                          to={"planets/" + element.uid}
+                        >
+                          Detail
+                        </Link>
+                      </button>
+                      <button
+                        className="btn btn-warning"
+                        onClick={() => {
+                          actions.addFavorites(element.name);
+                        }}
+                      >
+                        +
+                      </button>
                     </div>
                   </div>
                 </div>

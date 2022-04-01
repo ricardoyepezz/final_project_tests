@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import starWarsIcon from "../../img/star-wars-icon.png";
+import { Favorites } from "./Favorites";
 
 export const Navbar = () => {
 	return (
@@ -29,6 +30,7 @@ export const Navbar = () => {
           <span className="nav-link">Planets</span>
         </li>
 		</Link>
+    <Favorites/>
       </ul>
       <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>

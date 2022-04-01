@@ -8,6 +8,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	  planets: {},
     peopleDetail: {},
     planetsDetail: {},
+    favorites: [],
     },
     
     //Actions - funciones fetch para personas y planetas en donde actualizamos el estado de people y planets
@@ -48,7 +49,24 @@ const getState = ({ getStore, getActions, setStore }) => {
         .then((data) => {setStore({planetsDetail:data})})
         .catch((err) => console.error(err));
 			
-      }
+      }, 
+
+      addFavorites : (newFavorite) => {
+        
+      const store = getStore();
+      const fav = store.favorites.some(item => item === newFavorite)
+      if (fav === true) {
+          return
+      } else { 
+      setStore( store.favorites.push(newFavorite) )
+      }},
+
+      removeFavorites: (index) => {
+        
+        const store = getStore();
+        store.favorites.splice(index,1) 
+        setStore(...store)
+    },
     }
   }
 }
