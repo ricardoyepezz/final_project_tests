@@ -32,7 +32,7 @@ export const Planets = () => {
                         </Link>
                       </button>
                       <button
-                        className="btn btn-warning"
+                        className="btn btn-success"
                         onClick={() => {
                           actions.addFavorites(element.name);
                         }}

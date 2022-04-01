@@ -36,7 +36,7 @@ export const People = () => {
                           Detail
                         </Link>
                       </button>
-                      <button className="btn btn-warning" onClick={() => { actions.addFavorites(element.name) }}>+</button>
+                      <button className="btn btn-success" onClick={() => { actions.addFavorites(element.name) }}>+</button>
                     </div>
                   </div>
                 </div>

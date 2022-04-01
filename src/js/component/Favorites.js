@@ -7,11 +7,6 @@ export const Favorites = () => {
 
   return (
     <>
-      {/*  <button type="button" className="btn btn-warning">
-        Favorites{" "}
-        <span className="badge bg-secondary">{store.favorites}</span>
-      </button> */}
-
       <div className="btn-group">
         <button
           type="button"
@@ -26,14 +21,18 @@ export const Favorites = () => {
         <ul className="dropdown-menu dropdown-menu-lg-end">
           {store.favorites.map((item, index) => {
             return (
-              <li key={index}>
+              <li key={index} className="d-flex">
                 <button className="dropdown-item" type="button">
                   {item}
                 </button>
-
-                {/*------------------------------------------------------------------------------------------- falta */}
-                <button className="btn btn-warning" onClick={() => { actions.removeFavorites(item) }}>X</button>
-
+                <button
+                  className="btn btn-danger m-2"
+                  onClick={() => {
+                    actions.removeFavorites(index);
+                  }}
+                >
+                  X
+                </button>
               </li>
             );
           })}
