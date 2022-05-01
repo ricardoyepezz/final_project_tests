@@ -21,13 +21,7 @@ export const Navbar = () => {
 		</Link>
 		<Link style={{textDecoration : "none"}} to="/people">
         <li className="nav-item">
-          <span className="nav-link">People</span>
-        </li>
-		</Link>
-		<Link style={{textDecoration : "none"}} to="/planets">
-
-		<li className="nav-item">
-          <span className="nav-link">Planets</span>
+          <span className="nav-link">Movies</span>
         </li>
 		</Link>
     <Favorites/>
