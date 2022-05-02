@@ -7,17 +7,17 @@ export const PeopleDetail = () => {
   const { store, actions } = useContext(Context);
   //importante importar useParams desde react-router-dom
   const { id } = useParams();
-  console.log(store.titleDetail);
-
+  
   useEffect(() => {
     //ejecutamos funcion getPeopleDetail con la id proveniente del componente people
     actions.getTitleDetail(id);
+    console.log(store.titleDetail);
   }, []);
   return (
     <>
       <div className="mt-5 card text-white bg-dark border-warning border-4 w-75 container">
         <div className="card-body">
-          <h1 className="card-title fw-bold">Name:{store.titleDetail.titleType}</h1>
+          <h1 className="card-title fw-bold">Name:{store.titleDetail.seriesEndYear}</h1>
           {/* <h5 className="card-text fst-italic">{store.peopleDetail?.result?.description}</h5>
           <p className="card-text fw-lighter">Height: {store.peopleDetail?.result?.properties.height}
           </p> */}

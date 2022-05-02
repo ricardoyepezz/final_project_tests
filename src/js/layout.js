@@ -4,10 +4,7 @@ import injectContext from "./store/appContext";
 import { Home } from "./views/home";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { People } from "./component/People";
-import { Planets } from "./component/Planets";
-import { PeopleDetail } from "./component/PeopleDetail";
-import { PlanetsDetail } from "./component/PlanetsDetail";
+import { Movies } from "./component/Movies";
 
 const Layout = () => {
   const basename = process.env.BASENAME || "";
@@ -20,17 +17,8 @@ const Layout = () => {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/people">
-            <People />
-          </Route>
-          <Route exact path="/people/:id">
-            <PeopleDetail  />
-          </Route>
-          <Route exact path="/planets">
-            <Planets />
-          </Route>
-          <Route exact path="/planets/:id">
-            <PlanetsDetail  />
+          <Route exact path="/movies">
+            <Movies />
           </Route>
           <Route>
             <h1>Not found!</h1>
